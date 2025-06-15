@@ -1,0 +1,20 @@
+The CVE you're referring to is:
+
+CVE-2007-2447
+
+Summary:
+This vulnerability affects Samba and allows remote code execution via shell metacharacters when the username map script option is enabled in smb.conf. It is specifically exploitable through the SamrChangePassword function.
+
+Details:
+Vulnerability: Command injection via shell metacharacters
+
+Function Involved: SamrChangePassword
+
+Condition: Samba is configured with the username map script option enabled
+
+Impact: Remote attackers can execute arbitrary shell commands
+
+Affected Versions: Samba up to 3.0.24 (prior to the patch)
+
+Exploitation:
+An attacker can send specially crafted requests that get passed to the shell unsanitized due to improper handling of user input in the username map script, enabling execution of arbitrary commands.
